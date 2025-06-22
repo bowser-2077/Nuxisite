@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuxiland - Règles du Serveur</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; padding: 0;
+            background: #1e2328;
+            color: #f3f3f3;
+        }
+        header {
+            background: #2d3238;
+            padding: 30px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+        }
+        nav {
+            margin-top: 15px;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        .main-content {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #23272c;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px #0005;
+        }
+        .rules-list {
+            list-style: none;
+            padding: 0;
+        }
+        .rules-list li {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #2d3238;
+            border-radius: 8px;
+            box-shadow: 0 1px 6px #0003;
+        }
+        .rules-list li h3 {
+            margin-top: 0;
+            color: #ea00c3;
+        }
+        .rules-list li p {
+            margin: 5px 0;
+            color: #f3f3f3;
+        }
+        .rules-list li ul {
+            margin-top: 10px;
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+        .rules-list li ul li {
+            margin-bottom: 5px;
+            color: #b0b0b0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #b0b0b0;
+        }
+        .footer a {
+            color: #7289da;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .popup {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #21ac25;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+            z-index: 1000;
+        }
+
+        .popup.show {
+            opacity: 1;
+        }
+        
+    </style>
+</head>
+<body>
+<header>
+    <h1>Règles du Serveur Nuxiland</h1>
+    <nav>
+            <a href="index.html">Accueil</a>
+            <a href="actus.html">Actualités</a>
+            <a href="rules.html">Règlement</a>
+            <a id="join-button">Nous rejoindre</a>
+        </nav>
+</header>
+    <div class="main-content">
+        <h2>Bienvenue sur Nuxiland !</h2>
+        <p>Avant de commencer, merci de lire attentivement les règles suivantes pour garantir une expérience agréable pour tous.</p>
+        <ul class="rules-list">
+            <li>
+                <h3>Respectez les autres joueurs</h3>
+                <p>Tout comportement toxique, insultes ou harcèlement est strictement interdit.</p>
+            </li>
+            <li>
+                <h3>Aucune triche ou exploitation de bugs</h3>
+                <p>L'utilisation de cheats, hacks ou toute forme d'exploitation de bugs est interdite.</p>
+            </li>
+            <li>
+                <h3>Pas de spam</h3>
+                <p>Ne pas spam dans les canaux de discussion. Cela inclut les messages répétés, les liens non pertinents, etc.</p>
+            </li>
+            <li>
+                <h3>Respectez les canaux</h3>
+                <p>Utilisez les canaux appropriés pour vos discussions. Par exemple, ne postez pas de contenu hors sujet dans un canal dédié à un thème spécifique.</p>
+            </li>
+            <li>
+                <h3>Pas de contenu NSFW</h3>
+                <p>Toute forme de contenu inapproprié ou NSFW est interdite.</p>
+            </li>
+        </ul>
+        <strong><p>En cas de non-respect de ces règles, des sanctions pourront être appliquées allant d'un avertissement à un bannissement temporaire ou permanent.</p>
+        <p>Merci de rejoindre notre serveur Discord pour la liste complète des règles et pour toute question : 
+            <a href="https://discord.gg/https://discord.gg/bS8saef7tJ" target="_blank">Rejoindre Nuxiland</a></strong></p>
+
+<div id="popup" class="popup">IP copiée !</div>
+
+    <script>
+        const ipToCopy = "nuxiland.fr"; // IP
+
+        document.getElementById("join-button").addEventListener("click", function () {
+            // Clipboard copy
+            navigator.clipboard.writeText(ipToCopy).then(() => {
+                const popup = document.getElementById("popup");
+                popup.classList.add("show");
+
+                // Hide apres 2 secondes
+                setTimeout(() => {
+                    popup.classList.remove("show");
+                }, 2000);
+            }).catch(err => {
+                console.error("Erreur de copie :", err);
+            });
+        });
+    </script>

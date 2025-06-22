@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuxiland - Serveur Minecraft</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; padding: 0;
+            background: #1e2328;
+            color: #f3f3f3;
+        }
+        .intro-box {
+            max-width: 700px;
+            margin: 40px auto 30px auto;
+            background: #23272c;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px #0007;
+            padding: 32px 28px 28px 28px;
+            border-left: 8px solid #ea00c3;
+            position: relative;
+        }
+        .intro-box h2 {
+            margin-top: 0;
+            font-size: 2em;
+            color: #f8f8f8;
+            letter-spacing: 1px;
+        }
+        .intro-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+        .intro-tag {
+            background: #2d3238;
+            color: #41e4dc;
+            border-radius: 5px;
+            padding: 4px 12px;
+            font-size: 0.95em;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .intro-features {
+            margin: 18px 0 10px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+        .intro-features li {
+            margin-bottom: 7px;
+            font-size: 1.05em;
+        }
+        .intro-discord {
+            margin: 18px 0 0 0;
+            font-size: 1.08em;
+        }
+        .intro-discord a {
+            color: #7289da;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        .intro-footer {
+            margin-top: 18px;
+            font-size: 1.1em;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        header {
+            background: #2d3238;
+            padding: 30px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+        }
+        nav {
+            margin-top: 15px;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        .main-content {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #23272c;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px #0005;
+        }
+        .gallery {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        .gallery img {
+            width: 300px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            background: #444;
+        }
+        footer {
+            background: #2d3238;
+            color: #aaa;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        
+
+        .popup {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #21ac25;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+            z-index: 1000;
+        }
+
+        .popup.show {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Nuxiland</h1>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="actus.html">Actualités</a>
+            <a href="rules.html">Règlement</a>
+            <a id="join-button">Nous rejoindre</a>
+        </nav>
+    </header>
+
+    <div class="intro-box">
+        <h2>🌸 NuxiLand <span style="font-size:0.7em; color:#fff;">bêta 1.3</span></h2>
+        <div class="intro-tags">
+            <span class="intro-tag">Survie</span>
+            <span class="intro-tag">Guildes</span>
+            <span class="intro-tag">Français</span>
+            <span class="intro-tag">PVP</span>
+            <span class="intro-tag">Casino IG</span>
+        </div>
+        <div style="margin-bottom:10px;">
+            <strong style="font-size:1.15em;">🎮 NuxiLand - Le serveur survie qu’il vous faut ! 🌍</strong>
+            <br>
+            Vous cherchez une survie fun, avec des plugins, une communauté active et sans PvP ?<br>
+            <span style="color:#55e060;">Alors NuxiLand est fait pour vous !</span>
+        </div>
+        <ul class="intro-features">
+            <li>🔥 <b>Serveur Java 1.21.4</b></li>
+            <li>🚫 Pas de PvP – Jouez en toute tranquillité</li>
+            <li>🔧 Plugins utiles pour améliorer l'expérience</li>
+            <li>🧑‍🤝‍🧑 Joueurs actifs et bonne ambiance</li>
+        </ul>
+        <div class="intro-discord">
+            💬 Serveur Discord : 
+            <a href="https://discord.gg/bS8saef7tJ" target="_blank">https://discord.gg/bS8saef7tJ</a>
+        </div>
+        <div class="intro-footer">
+            🔓 Ouvert à tous ! Rejoignez-nous dès maintenant et commencez votre aventure !<br>
+            🧱 À très vite sur NuxiLand !
+        </div>
+    </div>
+
+
+    <div class="main-content">
+        <h2>Bienvenue sur Nuxiland !</h2>
+        <p>
+            Nuxiland est un serveur Minecraft convivial, ouvert à tous les joueurs souhaitant vivre une aventure unique.<br>
+            Rejoignez-nous pour construire, explorer et partager des moments inoubliables !
+        </p>
+        <div class="gallery">
+            <img src="images/img3.png" alt="Image du serveur 1">
+            <img src="images/img2.png" alt="Image du serveur 2">
+            <img src="images/img1.png" alt="Image du serveur 3">
+        </div>
+        <h3>Adresse IP du serveur :</h3>
+        <p style="font-size:1.2em; color:#ffffff;"><strong>➡️ play.nuxiland.fr</strong></p>
+    </div>
+
+    <footer>
+        &copy; 2025 Nuxiland - Serveur Minecraft | Nous ne sommes pas affiliés à Mojang AB ou Minecraft. <br>
+    </footer>
+</body>
+</html>
+
+<div id="popup" class="popup">IP copiée !</div>
+
+    <script>
+        const ipToCopy = "nuxiland.fr"; // IP
+
+        document.getElementById("join-button").addEventListener("click", function () {
+            // Clipboard copy
+            navigator.clipboard.writeText(ipToCopy).then(() => {
+                const popup = document.getElementById("popup");
+                popup.classList.add("show");
+
+                // Hide apres 2 secondes
+                setTimeout(() => {
+                    popup.classList.remove("show");
+                }, 2000);
+            }).catch(err => {
+                console.error("Erreur de copie :", err);
+            });
+        });
+    </script>

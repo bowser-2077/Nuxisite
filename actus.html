@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuxiland - Actualités</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; padding: 0;
+            background: #1e2328;
+            color: #f3f3f3;
+        }
+        header {
+            background: #2d3238;
+            padding: 30px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+        }
+        nav {
+            margin-top: 15px;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        .main-content {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #23272c;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px #0005;
+        }
+        .image-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #262b31;
+            border-radius: 10px;
+            margin-bottom: 32px;
+            padding: 18px;
+            box-shadow: 0 1px 6px #0003;
+        }
+        .image-box img {
+            max-width: 100%;
+            max-height: 220px;
+            border-radius: 8px;
+            background: #444;
+        }
+        .news-list {
+            list-style: none;
+            padding: 0;
+        }
+        .news-item {
+            background: #262b31;
+            border-left: 6px solid #ea00c3;
+            border-radius: 8px;
+            margin-bottom: 28px;
+            padding: 22px 20px 18px 20px;
+            box-shadow: 0 1px 6px #0003;
+        }
+        .news-item h3 {
+            margin-top: 0;
+            color: #ea00c3;
+        }
+        .news-date {
+            font-size: 0.95em;
+            color: #aaa;
+            margin-bottom: 8px;
+        }
+        footer {
+            background: #2d3238;
+            color: #aaa;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+
+        .popup {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #21ac25;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+            z-index: 1000;
+        }
+
+        .popup.show {
+            opacity: 1;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nuxiland</h1>
+        <nav>
+            <nav>
+            <a href="index.html">Accueil</a>
+            <a href="actus.html">Actualités</a>
+            <a href="rules.html">Règlement</a>
+            <a id="join-button">Nous rejoindre</a>
+        </nav>
+        </nav>
+    </header>
+    <div class="main-content">
+        <div class="image-box">
+            <img src="images/logo.png" alt="Bannière Actualités Nuxiland">
+        </div>
+        <h2>📰 Actualités du serveur</h2>
+        <ul class="news-list">
+            <li class="news-item">
+                <div class="news-date">22 juin 2025</div>
+                <h3>Ouverture du site Nuxiland !</h3>
+                <p>Bienvenue sur le site officiel du serveur Minecraft Nuxiland.<br>
+                Retrouvez ici toutes les actualités, mises à jour et événements du serveur.<br>
+                Restez connectés !</p>
+            </li>
+            <!-- Ajoutez d'autres actualités ici -->
+        </ul>
+    </div>
+    <footer>
+        &copy; 2025 Nuxiland - Serveur Minecraft | Nous ne sommes pas affiliés à Mojang AB ou Minecraft.
+    </footer>
+</body>
+</html>
+
+<div id="popup" class="popup">IP copiée !</div>
+
+    <script>
+        const ipToCopy = "nuxiland.fr"; // IP
+
+        document.getElementById("join-button").addEventListener("click", function () {
+            // Clipboard copy
+            navigator.clipboard.writeText(ipToCopy).then(() => {
+                const popup = document.getElementById("popup");
+                popup.classList.add("show");
+
+                // Hide apres 2 secondes
+                setTimeout(() => {
+                    popup.classList.remove("show");
+                }, 2000);
+            }).catch(err => {
+                console.error("Erreur de copie :", err);
+            });
+        });
+    </script>
